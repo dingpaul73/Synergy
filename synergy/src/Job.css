@@ -1,0 +1,118 @@
+.job {
+    margin: auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .job h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .job p {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  .job a {
+
+    text-decoration: none;
+  }
+  
+  .job a:hover {
+    text-decoration: underline;
+  }
+ 
+  
+  .job-detail a:hover {
+    text-decoration: underline;
+  }
+  .job-detail-link {
+    display: inline-block;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .job-detail-link:hover {
+    background-color: #0056b3;
+  }
+  .button-row {
+    display: flex;
+    justify-content: start;
+    margin-bottom: 20px;
+  }
+  
+  .job blue-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .blue-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .blue-button svg {
+    margin-right: 5px;
+  }
+
+  .tabs {
+    margin-bottom: 20px;
+  }
+  
+  .tab-button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #f0f0f0;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+  
+  .tab-button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .tab-content {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
+  tr:hover {
+    background-color: #ddd;
+  }
