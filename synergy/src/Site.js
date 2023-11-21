@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useParams, Link } from 'react-router-dom';
 import './Job.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,7 +7,10 @@ import { faPlus, faFileAlt, faPrint, faCheck } from '@fortawesome/free-solid-svg
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+
+
 function Site() {
+    const navigate = useNavigate();
     const [activeTab, setActiveTab] = useState('notInspected');
   const { siteId } = useParams();
   const siteDetails = {
@@ -15,6 +19,13 @@ function Site() {
     customer: 'RES',
     customerId: 456
   };
+  const siteTurbineData = [
+    { id: 1, name: 'A1', status: 'Operational',lastVisit:"14-08-2023" },
+    // ... other job data ...
+  ];
+const handleRowClick = (siteId) => {
+    navigate(`/site/${siteId}`);
+};
   const position = [55.8969, -2.3213];
   const customIcon = L.icon({
     iconUrl: '/marker.jpg',
@@ -53,8 +64,33 @@ function Site() {
           A pretty CSS3 popup. <br /> Easily customizable.
         </Popup>
       </Marker>
+      
     </MapContainer>
-   
+    <div>
+   <h1>Turbines</h1>
+      <input type="text" placeholder="Search..." className='search-bar' />
+      <button onClick={() => {}}>Create New</button>
+      <table>
+        <thead>
+          <tr>
+            <th>Turbine ID</th>
+            <th>Name</th>
+            <th>Status</th>
+            <th>Date of Last Visit</th>
+          </tr>
+        </thead>
+        <tbody>
+          {siteTurbineData.map(turbine => (
+            <tr key={turbine.id} onClick={() => handleRowClick(turbine.id)}>
+              <td>{turbine.id}</td>  
+              <td>{turbine.name}</td>  
+              <td>{turbine.status}</td>
+              <td>{turbine.lastVisit}</td>
+            </tr>
+          ))}
+        </tbody>
+        </table>
+</div>
 </div>
   
   );
